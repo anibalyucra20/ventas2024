@@ -32,7 +32,7 @@ FORMULARIO DE REGISTRO DE PRODUCTO
     </div>
     <div>
         <label for="">Imagen:</label>
-        <input type="text" class="form-control" required id="imagen" name="imagen">
+        <input type="file" class="form-control" required id="imagen" name="imagen">
     </div>
     <div>
         <label for="">Proveedor:</label>
@@ -47,4 +47,4 @@ FORMULARIO DE REGISTRO DE PRODUCTO
 <script src="<?php echo BASE_URL;?>views/js/functions_producto.js"></script>
 
 <script>listar_categorias();</script>
-<script>listar_categorias();</script>
+<script>listar_proveedores();</script>

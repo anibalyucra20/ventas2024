@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -68,5 +69,7 @@
                         </ul>
                     </li>
                     <li class="nav1"><a href="">Carrito</a></li>
+                    <li class="nav1"><a onclick="cerrar_sesion();">Cerrar Sesión</a></li>
+                    <li class="nav1"><a><i class="fa fa-user"></i><?php echo $_SESSION['sesion_ventas_nombres']; ?></a></li>
                 </ul>
             </div>

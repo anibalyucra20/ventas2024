@@ -1,3 +1,11 @@
+async function listar_productos() {
+    try {
+        let respuesta = await fetch(base_url+'controller/Producto.php?tipo=listar');
+    } catch (error) {
+        
+    }
+}
+
 async function registrar_producto() {
     let codigo = document.getElementById('codigo').value;
     let nombre = document.querySelector('#nombre').value;
