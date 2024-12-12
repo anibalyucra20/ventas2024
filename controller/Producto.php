@@ -36,7 +36,6 @@ if ($tipo == "listar") {
 if ($tipo == "registrar") {
     //print_r($_POST);
     //echo $_FILES['imagen']['name'];
-
     if ($_POST) {
         $codigo = $_POST['codigo'];
         $nombre = $_POST['nombre'];
@@ -51,7 +50,6 @@ if ($tipo == "registrar") {
             //repuesta
             $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
         } else {
-
             //cargar archivos
             $archivo = $_FILES['imagen']['tmp_name'];
             $destino = '../assets/img_productos/';
@@ -74,8 +72,6 @@ if ($tipo == "registrar") {
         }
     }
 }
-
-
 if ($tipo == "ver") {
     //print_r($_POST);
     $id_producto = $_POST['id_producto'];
@@ -91,7 +87,6 @@ if ($tipo == "ver") {
 if ($tipo == "actualizar") {
     //print_r($_POST);
     //print_r($_FILES['imagen']['tmp_name']);
-
     $id_producto = $_POST['id_producto'];
     $img = $_POST['img'];
     $nombre = $_POST['nombre'];
@@ -110,7 +105,6 @@ if ($tipo == "actualizar") {
 
             if ($_FILES['imagen']['tmp_name'] != "") {
                 unlink('../assets/img_productos/' . $img);
-
                 //cargar archivos
                 $archivo = $_FILES['imagen']['tmp_name'];
                 $destino = '../assets/img_productos/';
@@ -125,5 +119,14 @@ if ($tipo == "actualizar") {
     echo json_encode($arr_Respuesta);
 }
 if ($tipo == "eliminar") {
-    # code...
+    //print_r($_POST);
+    $id_producto = $_POST['id_producto'];
+    $arr_Respuesta = $objProducto->eliminarProducto($id_producto);
+    //print_r($arr_Respuesta);
+    if (empty($arr_Respuesta)) {
+        $response = array('status' => false);
+    } else {
+        $response = array('status' => true);
+    }
+    echo json_encode($response);
 }
